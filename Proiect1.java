@@ -118,17 +118,16 @@ private void comanda (int buget){
 	contor = scan.nextInt();
 	System.out.println ("Alege cantitatea produsului "+pr[contor].getNume());
 	cantitate = scan.nextInt();
-	if (pr[contor].getPret()*contor < buget){
-		System.out.println ("Nu te incadrezi in  pret! ");
-	}
-	else{
-	if (pr[contor].getStoc()>0){
-		buget-=contor*pr[contor].getPret();
-		System.out.println ("Buget ramas "+buget);
+	if (pr[contor].getPret()*cantitate < buget) {
+		if (pr[contor].getStoc()>0){
+			buget-=contor*pr[contor].getPret();
+			System.out.println ("Buget ramas "+buget);
 	} else {
 		System.out.println ("Produsul "+pr[contor].getNume()+ "nu mai este pe stoc");
+	} }
+	else{
+		System.out.println ("Nu te incadrezi in  pret! ");
 	}
 	}
 	}
 	}
-}
